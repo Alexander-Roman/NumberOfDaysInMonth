@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.Month;
-import java.time.Year;
+import java.time.YearMonth;
 
 public class DaysCalculatorTest {
 
@@ -13,7 +13,7 @@ public class DaysCalculatorTest {
         DaysCalculator calculator = new DaysCalculator();
 
         int expected = 31;
-        int actual = calculator.findNumberOfDaysInMonth(Year.of(2020), Month.MARCH);
+        int actual = calculator.findNumberOfDaysInMonth(YearMonth.of(2020, Month.MARCH));
 
         Assert.assertEquals(expected, actual);
     }
@@ -23,7 +23,7 @@ public class DaysCalculatorTest {
         DaysCalculator calculator = new DaysCalculator();
 
         int expected = 30;
-        int actual = calculator.findNumberOfDaysInMonth(Year.of(2020), Month.APRIL);
+        int actual = calculator.findNumberOfDaysInMonth(YearMonth.of(2020, Month.APRIL));
 
         Assert.assertEquals(expected, actual);
     }
@@ -33,7 +33,7 @@ public class DaysCalculatorTest {
         DaysCalculator calculator = new DaysCalculator();
 
         int expected = 28;
-        int actual = calculator.findNumberOfDaysInMonth(Year.of(2021), Month.FEBRUARY);
+        int actual = calculator.findNumberOfDaysInMonth(YearMonth.of(2021, Month.FEBRUARY));
 
         Assert.assertEquals(expected, actual);
     }
@@ -43,7 +43,7 @@ public class DaysCalculatorTest {
         DaysCalculator calculator = new DaysCalculator();
 
         int expected = 28;
-        int actual = calculator.findNumberOfDaysInMonth(Year.of(2100), Month.FEBRUARY);
+        int actual = calculator.findNumberOfDaysInMonth(YearMonth.of(2100, Month.FEBRUARY));
 
         Assert.assertEquals(expected, actual);
     }
@@ -53,7 +53,7 @@ public class DaysCalculatorTest {
         DaysCalculator calculator = new DaysCalculator();
 
         int expected = 29;
-        int actual = calculator.findNumberOfDaysInMonth(Year.of(2400), Month.FEBRUARY);
+        int actual = calculator.findNumberOfDaysInMonth(YearMonth.of(2400, Month.FEBRUARY));
 
         Assert.assertEquals(expected, actual);
     }
@@ -63,7 +63,7 @@ public class DaysCalculatorTest {
         DaysCalculator calculator = new DaysCalculator();
 
         int expected = 29;
-        int actual = calculator.findNumberOfDaysInMonth(Year.of(2024), Month.FEBRUARY);
+        int actual = calculator.findNumberOfDaysInMonth(YearMonth.of(2024, Month.FEBRUARY));
 
         Assert.assertEquals(expected, actual);
     }

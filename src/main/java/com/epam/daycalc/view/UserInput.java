@@ -19,7 +19,9 @@ public class UserInput {
             scanner.next();
         }
 
-        return scanner.nextInt();
+        int input = scanner.nextInt();
+        logger.log(Level.INFO, input);
+        return input;
     }
 
     public int getInt(String message) {

@@ -3,18 +3,15 @@ package com.epam.daycalc.data;
 import com.epam.daycalc.view.UserInput;
 
 import java.time.Month;
-import java.time.Year;
+import java.time.YearMonth;
 
-public class ConsoleDateProvider implements DateProvider {
+public class ConsoleYearMonthProvider implements YearMonthProvider {
 
-    @Override
-    public Year getYear() {
+    public int getYear() {
         UserInput input = new UserInput();
-        int isoYear = input.getInt("Введите год:");
-        return Year.of(isoYear);
+        return input.getInt("Введите год:");
     }
 
-    @Override
     public Month getMonth() {
         UserInput input = new UserInput();
         int month = 0;
@@ -25,4 +22,13 @@ public class ConsoleDateProvider implements DateProvider {
 
         return Month.of(month);
     }
+
+    @Override
+    public YearMonth getYearMonth() {
+        int year = getYear();
+        Month month = getMonth();
+
+        return YearMonth.of(year, month);
+    }
+
 }
